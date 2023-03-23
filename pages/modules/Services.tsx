@@ -26,7 +26,7 @@ const Services = (props: ServicesProps) => {
 
   return (
     <Container id={id} sx={{ marginTop: '20px' }}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent="center">
         {sections?.map((section) => {
           const {
             default: { src },
@@ -34,8 +34,8 @@ const Services = (props: ServicesProps) => {
 
           return (
             <Grid item xs={6} sm={4} md={3} key={section.id}>
-              <Card sx={{ width: '100%', height: '100%', paddingTop: '16px' }}>
-                <CardActionArea sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+              <Card sx={{ width: '100%', height: '100%' }}>
+                <CardActionArea sx={{ height: '100%', paddingTop: '16px', display: 'flex', flexDirection: 'column' }}>
                   <CardMedia
                     component="img"
                     image={src}

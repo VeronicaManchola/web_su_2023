@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navigation from './modules/Navigation';
 import Header from './modules/Header';
 import Services from './modules/Services';
+import Contact from './modules/Contact';
 
 const theme = createTheme({
   palette: {
@@ -14,6 +15,9 @@ const theme = createTheme({
     secondary: {
       main: '#415C65',
       contrastText: '#fff',
+    },
+    info: {
+      main: '#999999',
     },
     background: {
       default: '#fff',
@@ -31,7 +35,7 @@ const areasSections = [
   { id: 'protesis', image: 'protesis.png', title: 'Protesis Fija / Corona / Incrustación' },
   { id: 'implantes', image: 'implantes.png', title: 'Implantes Dentales' },
   { id: 'ortodoncia', image: 'ortodoncia.png', title: 'Ortodoncia / Frenillos' },
-  { id: 'general', image: 'odontologia.png', title: 'Odontología General' },
+  { id: 'general', image: 'general.png', title: 'Odontología General' },
   { id: 'estetica', image: 'estetica.png', title: 'Estetíca Facial' },
   { id: 'endodoncia', image: 'endodoncia.png', title: 'Endodoncia / Tratamiento de Conducto' },
   { id: 'exodoncia', image: 'exodoncia.png', title: 'Exodoncia / Extracción de Dientes' },
@@ -49,6 +53,7 @@ const Home: NextPage = () => {
       <Navigation title="SuDent" sections={navSections} />
       <Header />
       <Services sections={areasSections} id="especialidades" />
+      <Contact />
     </ThemeProvider>
   );
 };
