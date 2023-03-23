@@ -8,13 +8,15 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import useTheme from '@mui/material/styles/useTheme';
 
+interface Section {
+  id: string;
+  image: string;
+  title: string;
+}
+
 interface ServicesProps {
   id: string;
-  sections: ReadonlyArray<{
-    id: string;
-    image: string;
-    title: string;
-  }>;
+  sections: Section[];
 }
 
 const Services = (props: ServicesProps) => {
@@ -25,7 +27,7 @@ const Services = (props: ServicesProps) => {
   return (
     <Container id={id} sx={{ marginTop: '20px' }}>
       <Grid container spacing={3}>
-        {sections.map((section) => {
+        {sections?.map((section) => {
           const {
             default: { src },
           } = require(`@assets/icons/${section.image}`);

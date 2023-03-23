@@ -73,7 +73,7 @@ const Navigation = (props: HeaderProps) => {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {sections.map((section) => (
+                {sections?.map((section) => (
                   <MenuItem key={section.id} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{section.title}</Typography>
                   </MenuItem>
@@ -82,7 +82,7 @@ const Navigation = (props: HeaderProps) => {
             </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {sections.map((section, index) => (
+              {sections?.map((section, index) => (
                 <Button
                   key={section.id}
                   onClick={() => {
