@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import Link from 'next/link';
 
 interface HeaderProps {
   sections: ReadonlyArray<{
@@ -41,7 +42,9 @@ const Navigation = (props: HeaderProps) => {
         <Container maxWidth="xl">
           <Toolbar sx={{ borderBottom: 1, borderColor: 'divider', maxHeight: 64 }}>
             <Typography variant="h6" noWrap component="a" href="/">
-              <Image src={logo} alt={title} loading="lazy" layout="fill" objectFit="contain" objectPosition="left" />
+              <Box width={220}>
+                <img src={logo.src} alt={title} style={{ maxWidth: '220px' }} />
+              </Box>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <Button
@@ -83,22 +86,26 @@ const Navigation = (props: HeaderProps) => {
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {sections?.map((section, index) => (
-                <Button
+                <Box
                   key={section.id}
-                  onClick={() => {
-                    if (section.url.startsWith('#')) {
-                      const id = section.url.replace('#', '');
-                      const element = document.getElementById(id);
-                      element?.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                      window.location.href = section.url;
-                    }
-                  }}
-                  color="secondary"
                   sx={{ my: 2, ml: `${index === 0 ? 'auto' : '10px'}`, color: palette.secondary.main, fontWeight: 600 }}
                 >
-                  {section.title}
-                </Button>
+                  <Link
+                    // onClick={() => {
+                    //   if (section.url.startsWith('#')) {
+                    //     const id = section.url.replace('#', '');
+                    //     const element = document.getElementById(id);
+                    //     element?.scrollIntoView({ behavior: 'smooth' });
+                    //   } else {
+                    //     window.location.href = section.url;
+                    //   }
+                    // }}
+                    href={section.url}
+                    scroll={!!section.url.startsWith('/#')}
+                  >
+                    <Button color="secondary">{section.title}</Button>
+                  </Link>
+                </Box>
               ))}
             </Box>
           </Toolbar>

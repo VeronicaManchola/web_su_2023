@@ -1,10 +1,13 @@
 import type { NextPage } from 'next';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Navigation from './modules/Navigation';
-import Header from './modules/Header';
-import Services from './modules/Services';
-import Contact from './modules/Contact';
+import Navigation from '@modules/Navigation';
+import Header from '@modules/Header';
+import Services from '@modules/Services';
+import Contact from '@modules/Contact';
+import Fab from '@mui/material/Fab';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import Box from '@mui/material/Box';
 
 const theme = createTheme({
   palette: {
@@ -54,6 +57,11 @@ const Home: NextPage = () => {
       <Header />
       <Services sections={areasSections} id="especialidades" />
       <Contact />
+      <Box sx={{ position: 'fixed', bottom: '15px', right: '15px' }}>
+        <Fab color="success" aria-label="whatsapp">
+          <WhatsAppIcon />
+        </Fab>
+      </Box>
     </ThemeProvider>
   );
 };
