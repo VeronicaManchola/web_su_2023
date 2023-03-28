@@ -27,7 +27,7 @@ const theme = createTheme({
   },
 });
 const navSections = [
-  { title: 'Especialidades', url: '/#especialidades', id: 'especialidades' },
+  { title: 'Especialidades', url: '/', hash: 'especialidades', id: 'especialidades' },
   { title: 'Urgencias', url: '/urgencias', id: 'urgencias' },
 ];
 

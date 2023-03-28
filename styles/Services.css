@@ -1,0 +1,26 @@
+.container {
+  margin-top: 20px;
+}
+
+.slick-slide {
+  border-color: rgba(65, 92, 101, 0.7);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 278px !important;
+  margin: 0 5px;
+}
+
+.slick-prev {
+  left: -30px;
+}
+
+.slick-prev {
+  left: -30px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px;
+  color: #415c65 !important;
+}

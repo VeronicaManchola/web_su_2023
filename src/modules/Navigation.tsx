@@ -11,12 +11,13 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface HeaderProps {
   sections: ReadonlyArray<{
     title: string;
     url: string;
+    hash?: string;
     id: string;
   }>;
   title: string;
@@ -25,6 +26,7 @@ interface HeaderProps {
 const Navigation = (props: HeaderProps) => {
   const { sections, title } = props;
   const { palette } = useTheme();
+  const router = useRouter();
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
@@ -41,7 +43,11 @@ const Navigation = (props: HeaderProps) => {
       <AppBar position="static" sx={{ bgcolor: palette.background.default }}>
         <Container maxWidth="xl">
           <Toolbar sx={{ borderBottom: 1, borderColor: 'divider', maxHeight: 64 }}>
-            <Typography variant="h6" noWrap component="a" href="/">
+            <Typography
+              component="button"
+              onClick={() => router.push('/')}
+              sx={{ border: 'none', padding: 0, background: 'none' }}
+            >
               <Box width={220}>
                 <img src={logo.src} alt={title} style={{ maxWidth: '220px' }} />
               </Box>
@@ -77,7 +83,20 @@ const Navigation = (props: HeaderProps) => {
                 }}
               >
                 {sections?.map((section) => (
-                  <MenuItem key={section.id} onClick={handleCloseNavMenu}>
+                  <MenuItem
+                    key={section.id}
+                    onClick={() => {
+                      handleCloseNavMenu();
+
+                      if (section.hash && section.url === router.pathname) {
+                        const id = section.hash;
+                        const element = document.getElementById(id);
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        router.push({ pathname: section.url, hash: section.hash }, section.url, { scroll: false });
+                      }
+                    }}
+                  >
                     <Typography textAlign="center">{section.title}</Typography>
                   </MenuItem>
                 ))}
@@ -90,21 +109,20 @@ const Navigation = (props: HeaderProps) => {
                   key={section.id}
                   sx={{ my: 2, ml: `${index === 0 ? 'auto' : '10px'}`, color: palette.secondary.main, fontWeight: 600 }}
                 >
-                  <Link
-                    // onClick={() => {
-                    //   if (section.url.startsWith('#')) {
-                    //     const id = section.url.replace('#', '');
-                    //     const element = document.getElementById(id);
-                    //     element?.scrollIntoView({ behavior: 'smooth' });
-                    //   } else {
-                    //     window.location.href = section.url;
-                    //   }
-                    // }}
-                    href={section.url}
-                    scroll={!!section.url.startsWith('/#')}
+                  <Button
+                    onClick={() => {
+                      if (section.hash && section.url === router.pathname) {
+                        const id = section.hash;
+                        const element = document.getElementById(id);
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        router.push({ pathname: section.url, hash: section.hash }, section.url, { scroll: false });
+                      }
+                    }}
+                    color="secondary"
                   >
-                    <Button color="secondary">{section.title}</Button>
-                  </Link>
+                    {section.title}
+                  </Button>
                 </Box>
               ))}
             </Box>
