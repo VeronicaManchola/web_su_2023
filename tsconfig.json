@@ -18,6 +18,7 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@modules/*": ["src/modules/*"],
+      "@utils/*": ["src/utils/*"],
       "@styles/*": ["styles/*"]
     }
   },

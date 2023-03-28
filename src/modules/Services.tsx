@@ -34,19 +34,17 @@ const Services = (props: ServicesProps) => {
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 900,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+          slidesToShow: 3,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
+          slidesToShow: 2,
+          slidesToScroll: 1,
         },
       },
       {
@@ -61,14 +59,23 @@ const Services = (props: ServicesProps) => {
 
   return (
     <Container id={id} className="container">
-      <Slider {...settings} className="slider">
+      <Slider {...settings}>
         {sections?.map((section) => {
           const {
             default: { src },
           } = require(`@assets/icons/${section.image}`);
 
           return (
-            <Box key={section.id} sx={{ height: '220px' }}>
+            <Box
+              key={section.id}
+              sx={{
+                height: '220px',
+                borderColor: 'rgba(65, 92, 101, 0.7)',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderRadius: '5px',
+              }}
+            >
               <CardActionArea sx={{ height: '100%', paddingTop: '16px', display: 'flex', flexDirection: 'column' }}>
                 <CardMedia
                   component="img"

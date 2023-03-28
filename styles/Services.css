@@ -2,25 +2,45 @@
   margin-top: 20px;
 }
 
-.slick-slide {
-  border-color: rgba(65, 92, 101, 0.7);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 5px;
-  width: 278px !important;
-  margin: 0 5px;
+.slick-list {
+  margin: 0 -5px;
+}
+
+.slick-slide > div {
+  padding: 0 5px;
+}
+
+.slick-prev,
+.slick-next {
+  width: 30px;
+  height: 30px;
 }
 
 .slick-prev {
-  left: -30px;
+  left: 0;
 }
 
-.slick-prev {
-  left: -30px;
+.slick-next {
+  right: 0;
 }
 
 .slick-prev:before,
 .slick-next:before {
   font-size: 30px;
   color: #415c65 !important;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .slick-prev {
+    left: -30px;
+  }
+
+  .slick-next {
+    right: -30px;
+  }
 }

@@ -13,13 +13,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useRouter } from 'next/router';
 
+interface Section {
+  title: string;
+  url: string;
+  hash?: string;
+  id: string;
+}
 interface HeaderProps {
-  sections: ReadonlyArray<{
-    title: string;
-    url: string;
-    hash?: string;
-    id: string;
-  }>;
+  sections: Section[];
   title: string;
 }
 
@@ -42,14 +43,14 @@ const Navigation = (props: HeaderProps) => {
     <Fragment>
       <AppBar position="static" sx={{ bgcolor: palette.background.default }}>
         <Container maxWidth="xl">
-          <Toolbar sx={{ borderBottom: 1, borderColor: 'divider', maxHeight: 64 }}>
+          <Toolbar sx={{ maxHeight: 64 }}>
             <Typography
               component="button"
               onClick={() => router.push('/')}
               sx={{ border: 'none', padding: 0, background: 'none' }}
             >
-              <Box width={220}>
-                <img src={logo.src} alt={title} style={{ maxWidth: '220px' }} />
+              <Box width={220} sx={{ height: '64px' }}>
+                <img src={logo.src} alt={title} style={{ maxWidth: '220px', maxHeight: '100%' }} />
               </Box>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
