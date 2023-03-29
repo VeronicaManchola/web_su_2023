@@ -7,7 +7,12 @@ export const navSections = [
 
 export const areasSections = [
   { id: 'urgencias-dentales', image: 'urgencia_dental.png', title: 'Urgencias Dentales', target: '/urgencias' },
-  { id: 'odontopediatria', image: 'odontopediatria.png', title: 'Odontopediatría: Especialista en Niños' },
+  {
+    id: 'odontopediatria',
+    image: 'odontopediatria.png',
+    title: 'Odontopediatría: Especialista en Niños',
+    hash: 'odontopediatria',
+  },
   { id: 'odontogeriatria', image: 'odontogeriatria.png', title: 'Odontogeriatría: Especialista en Adulto Mayor' },
   { id: 'protesis', image: 'protesis.png', title: 'Protesis Fija / Corona / Incrustación' },
   { id: 'implantes', image: 'implantes.png', title: 'Implantes Dentales' },
