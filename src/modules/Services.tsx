@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -8,11 +7,14 @@ import Container from '@mui/material/Container';
 import useTheme from '@mui/material/styles/useTheme';
 import Slider from 'react-slick';
 import Box from '@mui/material/Box';
+import { useRouter } from 'next/router';
 
 interface Section {
   id: string;
   image: string;
   title: string;
+  target?: string;
+  hash?: string;
 }
 
 interface ServicesProps {
@@ -24,6 +26,7 @@ const Services = (props: ServicesProps) => {
   const { id, sections } = props;
   const theme = useTheme();
   const { palette } = theme;
+  const router = useRouter();
 
   var settings = {
     adaptiveHeight: true,
@@ -58,7 +61,7 @@ const Services = (props: ServicesProps) => {
   };
 
   return (
-    <Container id={id} className="container">
+    <Container id={id}>
       <Slider {...settings}>
         {sections?.map((section) => {
           const {
@@ -76,7 +79,18 @@ const Services = (props: ServicesProps) => {
                 borderRadius: '5px',
               }}
             >
-              <CardActionArea sx={{ height: '100%', paddingTop: '16px', display: 'flex', flexDirection: 'column' }}>
+              <CardActionArea
+                sx={{ height: '100%', paddingTop: '16px', display: 'flex', flexDirection: 'column' }}
+                onClick={() => {
+                  if (section.hash) {
+                    const id = section.hash;
+                    const element = document.getElementById(id);
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    router.push({ pathname: section.target }, section.target, { scroll: false });
+                  }
+                }}
+              >
                 <CardMedia
                   component="img"
                   image={src}

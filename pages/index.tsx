@@ -1,44 +1,52 @@
 import type { NextPage } from 'next';
-import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useRouter } from 'next/router';
-import getPage from '@utils/getPage';
-import Banner from '@modules/Banner';
-import Navigation from '@modules/Navigation';
-import { navSections } from '@utils/constants';
+import { Fragment } from 'react';
+import Hero from '@modules/Hero';
+import Services from '@modules/Services';
+import Contact from '@modules/Contact';
+import { areasSections, locationText, scheduleText } from '@utils/constants';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#00D9B4',
-      contrastText: '#fff',
-    },
-    secondary: {
-      main: '#415C65',
-      contrastText: '#fff',
-    },
-    info: {
-      main: '#999999',
-    },
-    background: {
-      default: '#fff',
-    },
-  },
-});
+import location from '@assets/images/location.jpeg';
+import locationMobile from '@assets/images/locationMobile.jpeg';
+import schedule from '@assets/images/schedule.jpeg';
+import scheduleMobile from '@assets/images/scheduleMobile.jpeg';
 
-const App: NextPage = () => {
-  const router = useRouter();
-  const { pathname } = router;
-  const Page = getPage(pathname);
-
+const Home: NextPage = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Banner />
-      <Navigation title="SuDent" sections={navSections} />
-      <Page />
-    </ThemeProvider>
+    <Fragment>
+      <Hero
+        image={location.src}
+        mobileImage={locationMobile.src}
+        description="ubicacion consultorio"
+        href="https://goo.gl/maps/kaZemArB3RFsf5SS7"
+      >
+        <Grid item xs={12} display="flex" alignItems="center" justifyContent="center" mt="20px" flexDirection="column">
+          {locationText.map((text, index) => (
+            <Typography key={`locationText${index}`} component="h6" variant="h6" textAlign="center">
+              {text}
+            </Typography>
+          ))}
+        </Grid>
+      </Hero>
+      <Hero
+        image={schedule.src}
+        mobileImage={scheduleMobile.src}
+        description="horario consultorio"
+        href="https://n9.cl/tm0ht"
+      >
+        <Grid item xs={12} display="flex" alignItems="center" justifyContent="center" mt="20px" flexDirection="column">
+          {scheduleText.map((text, index) => (
+            <Typography key={`scheduleText${index}`} component="h6" variant="h6" textAlign="center">
+              {text}
+            </Typography>
+          ))}
+        </Grid>
+      </Hero>
+      <Services sections={areasSections} id="especialidades" />
+      <Contact />
+    </Fragment>
   );
 };
 
-export default App;
+export default Home;
