@@ -6,12 +6,15 @@ import useTheme from '@mui/material/styles/useTheme';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
+import styles from '@styles/Contact.module.css';
+
 const Contact = () => {
   const theme = useTheme();
   const { palette } = theme;
 
   return (
     <Box
+      className={styles.shadow}
       sx={{
         backgroundColor: palette.info.main,
         marginTop: '20px',

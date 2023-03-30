@@ -8,13 +8,17 @@ import useTheme from '@mui/material/styles/useTheme';
 import Slider from 'react-slick';
 import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
+import Collapse from '@mui/material/Collapse';
+import { useState } from 'react';
+import { areasDescription } from '@utils/constants';
+import DetailCard from './DetailCard';
 
 interface Section {
   id: string;
   image: string;
   title: string;
   target?: string;
-  hash?: string;
+  text?: string;
 }
 
 interface ServicesProps {
@@ -27,6 +31,17 @@ const Services = (props: ServicesProps) => {
   const theme = useTheme();
   const { palette } = theme;
   const router = useRouter();
+  const [checked, setChecked] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({
+    id: '',
+    title: '',
+    image: '',
+    text: <></>,
+  });
+
+  const handleChange = (newId: string) => {
+    if (newId === selectedCard.id || selectedCard.id === '') setChecked((prev) => !prev);
+  };
 
   var settings = {
     adaptiveHeight: true,
@@ -34,13 +49,13 @@ const Services = (props: ServicesProps) => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToScroll: 4,
     responsive: [
       {
         breakpoint: 900,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
+          slidesToScroll: 3,
         },
       },
       {
@@ -82,12 +97,28 @@ const Services = (props: ServicesProps) => {
               <CardActionArea
                 sx={{ height: '100%', paddingTop: '16px', display: 'flex', flexDirection: 'column' }}
                 onClick={() => {
-                  if (section.hash) {
-                    const id = section.hash;
-                    const element = document.getElementById(id);
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                  if (section.target) {
+                    router.push({ pathname: section.target, hash: 'urgenciasDetail' }, section.target, {
+                      scroll: false,
+                    });
                   } else {
-                    router.push({ pathname: section.target }, section.target, { scroll: false });
+                    handleChange(section.id);
+
+                    const {
+                      default: { src: cardSrc },
+                    } = require(`@assets/images/${areasDescription[section.id].image}`);
+
+                    setSelectedCard({
+                      id: section.id,
+                      title: section.title,
+                      image: cardSrc,
+                      text: areasDescription[section.id].text,
+                    });
+
+                    setTimeout(() => {
+                      const element = document.getElementById('collapseText');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }, 200);
                   }
                 }}
               >
@@ -111,6 +142,10 @@ const Services = (props: ServicesProps) => {
           );
         })}
       </Slider>
+
+      <Collapse id="collapseText" sx={{ marginTop: '30px' }} in={checked}>
+        <DetailCard title={selectedCard.title} text={selectedCard.text} image={selectedCard.image} />
+      </Collapse>
     </Container>
   );
 };
