@@ -95,7 +95,7 @@ const Services = (props: ServicesProps) => {
                 sx={{ height: '100%', paddingTop: '16px', display: 'flex', flexDirection: 'column' }}
                 onClick={() => {
                   if (section.target) {
-                    router.push({ pathname: section.target, hash: 'urgenciasDetail' }, section.target, {
+                    router.push({ pathname: section.target, hash: 'urgenciasDetail' }, undefined, {
                       scroll: false,
                     });
                   } else {
