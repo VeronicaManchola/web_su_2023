@@ -45,9 +45,13 @@ const Navigation = (props: HeaderProps) => {
         <Container maxWidth="xl">
           <Toolbar sx={{ maxHeight: 64 }}>
             <Typography
-              component="button"
-              onClick={() => router.push('/')}
-              sx={{ border: 'none', padding: 0, background: 'none' }}
+              component="a"
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push('/');
+              }}
+              sx={{ border: 'none', padding: 0, background: 'none', cursor: 'pointer' }}
             >
               <Box width={220} sx={{ height: '64px' }}>
                 <img src={logo.src} alt={title} style={{ maxWidth: '220px', maxHeight: '100%' }} />
@@ -94,7 +98,7 @@ const Navigation = (props: HeaderProps) => {
                         const element = document.getElementById(id);
                         element?.scrollIntoView({ behavior: 'smooth' });
                       } else {
-                        router.push({ pathname: section.url, hash: section.hash }, section.url, { scroll: false });
+                        router.push({ pathname: section.url, hash: section.hash }, undefined, { scroll: false });
                       }
                     }}
                   >
@@ -117,7 +121,7 @@ const Navigation = (props: HeaderProps) => {
                         const element = document.getElementById(id);
                         element?.scrollIntoView({ behavior: 'smooth' });
                       } else {
-                        router.push({ pathname: section.url, hash: section.hash }, section.url, { scroll: false });
+                        router.push({ pathname: section.url, hash: section.hash }, undefined, { scroll: false });
                       }
                     }}
                     color="secondary"

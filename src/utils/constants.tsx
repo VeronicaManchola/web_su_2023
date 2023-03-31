@@ -282,7 +282,7 @@ export const scheduleText = [
   <span>
     Para garantizar tu atención debes realizar la reserva por WhatsApp o llamado al número{' '}
     <Link href="tel:+56931811912" underline="none" color="primary" variant="inherit">
-      +56 9 3181 1912
+      +56931811912
     </Link>
   </span>,
   <div style={{ marginTop: '20px' }}>HORARIO DE ATENCION:</div>,
