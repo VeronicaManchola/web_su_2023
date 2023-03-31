@@ -61,6 +61,7 @@ const Contact = () => {
         <Grid container justifyContent="center" rowGap={2}>
           <Grid item xs={4} md={2} lg={2}>
             <Image
+              alt="logo sudent"
               src={footerLogo}
               layout="responsive"
               width="105px"

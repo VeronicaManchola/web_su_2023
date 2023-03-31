@@ -5,7 +5,6 @@ import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import logo from '@assets/images/logo.jpeg';
 import Image from 'next/image';
-import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
@@ -26,7 +25,6 @@ interface HeaderProps {
 
 const Navigation = (props: HeaderProps) => {
   const { sections, title } = props;
-  const { palette } = useTheme();
   const router = useRouter();
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -41,7 +39,7 @@ const Navigation = (props: HeaderProps) => {
 
   return (
     <Fragment>
-      <AppBar position="static" sx={{ bgcolor: palette.background.default }}>
+      <AppBar position="static" sx={{ bgcolor: 'background.default' }}>
         <Container maxWidth="xl">
           <Toolbar sx={{ maxHeight: 64 }}>
             <Typography
@@ -54,7 +52,7 @@ const Navigation = (props: HeaderProps) => {
               sx={{ border: 'none', padding: 0, background: 'none', cursor: 'pointer' }}
             >
               <Box width={220} sx={{ height: '64px' }}>
-                <img src={logo.src} alt={title} style={{ maxWidth: '220px', maxHeight: '100%' }} />
+                <Image src={logo} layout="responsive" width="214px" height="62px" alt={title} />
               </Box>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -112,7 +110,7 @@ const Navigation = (props: HeaderProps) => {
               {sections?.map((section, index) => (
                 <Box
                   key={section.id}
-                  sx={{ my: 2, ml: `${index === 0 ? 'auto' : '10px'}`, color: palette.secondary.main, fontWeight: 600 }}
+                  sx={{ my: 2, ml: `${index === 0 ? 'auto' : '10px'}`, color: 'secondary.main', fontWeight: 600 }}
                 >
                   <Button
                     onClick={() => {

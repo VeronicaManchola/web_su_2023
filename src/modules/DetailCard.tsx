@@ -48,7 +48,7 @@ const DetailCard = (props: DetailCardProps) => {
         </Box>
       </Grid>
       <Grid item xs={12} md={6}>
-        {image !== '' ? <Image src={image} layout="responsive" width="300px" height="188px" /> : <></>}
+        {image !== '' ? <Image src={image} layout="responsive" width="300px" height="188px" alt={title} /> : <></>}
       </Grid>
       {secondaryText ?? (
         <Grid item xs={12}>

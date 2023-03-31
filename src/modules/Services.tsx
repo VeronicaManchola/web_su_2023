@@ -4,7 +4,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import Container from '@mui/material/Container';
-import useTheme from '@mui/material/styles/useTheme';
 import Slider from 'react-slick';
 import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
@@ -28,8 +27,6 @@ interface ServicesProps {
 
 const Services = (props: ServicesProps) => {
   const { id, sections } = props;
-  const theme = useTheme();
-  const { palette } = theme;
   const router = useRouter();
   const [checked, setChecked] = useState(false);
   const [selectedCard, setSelectedCard] = useState({
@@ -133,7 +130,7 @@ const Services = (props: ServicesProps) => {
                   }}
                 />
                 <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <Typography variant="h6" component="div" sx={{ textAlign: 'center', color: palette.secondary.main }}>
+                  <Typography variant="h6" component="div" sx={{ textAlign: 'center', color: 'secondary.main' }}>
                     {section.title}
                   </Typography>
                 </CardContent>

@@ -1,10 +1,12 @@
 {
   "extends": "next/core-web-vitals",
-  "indent": ["error", 2],
-  "no-restricted-imports": [
+  "rules": {
+    "indent": ["error", 2],
+    "no-restricted-imports": [
       "error",
       {
         "patterns": ["@mui/*/*/*"]
       }
     ]
+  }
 }

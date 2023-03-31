@@ -279,12 +279,14 @@ export const locationText = [
 
 export const scheduleText = [
   'Debido a la emergencia sanitaria generada por Covid-19 estamos atendiendo sólo con RESERVA de hora.',
-  <span>
+  <span key="appointment">
     Para garantizar tu atención debes realizar la reserva por WhatsApp o llamado al número{' '}
     <Link href="tel:+56931811912" underline="none" color="primary" variant="inherit">
       +56931811912
     </Link>
   </span>,
-  <div style={{ marginTop: '20px' }}>HORARIO DE ATENCION:</div>,
+  <div key="schedule" style={{ marginTop: '20px' }}>
+    HORARIO DE ATENCION:
+  </div>,
   'Martes a Domingo de 8:30 - 21:30 Hrs con hora reservada para garantizar tu atención.',
 ];
