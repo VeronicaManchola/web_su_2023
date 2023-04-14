@@ -281,7 +281,7 @@ export const scheduleText = [
   'Debido a la emergencia sanitaria generada por Covid-19 estamos atendiendo sólo con RESERVA de hora.',
   <span key="appointment">
     Para garantizar tu atención debes realizar la reserva por WhatsApp o llamado al número{' '}
-    <Link href="tel:+56931811912" underline="none" color="primary" variant="inherit">
+    <Link href="https://n9.cl/tm0ht" underline="none" color="primary" variant="inherit">
       +56931811912
     </Link>
   </span>,

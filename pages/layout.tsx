@@ -37,7 +37,12 @@ const Layout = ({ children }: LayoutProps) => {
       <CssBaseline />
       <Banner />
       <Navigation title="SuDent" sections={navSections} />
-      <Hero image={header.src} mobileImage={headerMobile.src} description="mujer con dolor dental" />
+      <Hero
+        image={header.src}
+        mobileImage={headerMobile.src}
+        description="mujer con dolor dental"
+        href="https://linktr.ee/sudenturgenciadentalmaipu"
+      />
       {children}
     </ThemeProvider>
   );
