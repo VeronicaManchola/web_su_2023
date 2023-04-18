@@ -28,7 +28,7 @@ export const areasSections = [
   { id: 'periodoncia', image: 'periodoncia.png', title: 'Periodoncia / Limpieza Dental' },
   { id: 'blanqueamiento', image: 'blanqueamiento.png', title: 'Blanqueamiento Dental' },
   { id: 'carillas', image: 'carillas.png', title: 'Carillas' },
-  { id: 'removible', image: 'removible.png', title: 'Reparación Removibles / Reparación' },
+  { id: 'removible', image: 'removible.png', title: 'Prótesis dentales / Placas dentales' },
   { id: 'bruxismo', image: 'bruxismo.png', title: 'Tratamiento de Bruxismo' },
 ];
 
@@ -144,9 +144,6 @@ export const areasDescription: AreaDescription = {
         <li>Ortodoncia Lingual: Brackets en el lado interno de los dientes</li>
         <li>Aparatos Transparentes u Ortodoncia Invisible</li>
         <li>Brackets de Cerámica: Bracket de color blanco</li>
-        <li>Prótesis Fija Unitaria</li>
-        <li>Coronas Metal Porcelana</li>
-        <li>Coronas Libre de Metal</li>
       </ul>
     ),
   },
