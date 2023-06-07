@@ -11,10 +11,32 @@ import location from '@assets/images/location.jpeg';
 import locationMobile from '@assets/images/locationMobile.jpeg';
 import schedule from '@assets/images/schedule.jpeg';
 import scheduleMobile from '@assets/images/scheduleMobile.jpeg';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
+  const {
+    default: { src: ogImg },
+  } = require(`@assets/images/og_img.jpg`);
+
   return (
     <Fragment>
+      <Head>
+        <title>SuDent Clinic - Inicio</title>
+        <meta
+          name="description"
+          content="Sudent Clinic - Servicio de Urgencia Dental - Especialistas en Urgencias dentales. Todas las urgencias dentales las atendemos (dolor, fracturas, infecciones, etc.)"
+        />
+        <meta
+          name="keywords"
+          content="urgencia dental, maipu, sudent, protesis dentales, endodoncia, corona dental, ortodoncia, tratamiento de conducto, dentista niño, limpieza destartraje dental, blanqueamiento dental, dolor de diente muela"
+        />
+        <meta property="og:title" content="SuDent Clinic - Urgencias Dentales" />
+        <meta
+          property="og:description"
+          content="SuDent Clinic Servicio de Urgencia Dental sede Maipu. Especialistas en Urgencias dentales. Todas las urgencias dentales las atendemos (dolor, fracturas, infecciones, etc.)"
+        />
+        <meta property="og:image" content={ogImg} />
+      </Head>
       <Hero
         image={location.src}
         mobileImage={locationMobile.src}

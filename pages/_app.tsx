@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import '@styles/globals.css';
 import '@styles/SlickCustom.css';
 import type { AppProps } from 'next/app';
-import Layout from './layout';
+import Layout from '../src/pages/layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

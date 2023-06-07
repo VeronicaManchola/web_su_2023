@@ -95,8 +95,8 @@ const Contact = () => {
             <Box display="flex" flexDirection="row" alignItems="center" sx={{ marginBottom: '15px' }}>
               <EmailIcon fontSize="large" />
               <Typography sx={{ fontWeight: 700, marginLeft: '10px' }}>
-                <Link href={`mailto:serviciodeurgenciadental@gmail.com`} color="inherit">
-                  serviciodeurgenciadental@gmail.com
+                <Link href={`mailto:contacto@sudentclinic.cl`} color="inherit">
+                  contacto@sudentclinic.cl
                 </Link>
               </Typography>
             </Box>
