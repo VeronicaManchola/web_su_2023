@@ -34,7 +34,7 @@ export const areasSections = [
 
 export const areasDescription: AreaDescription = {
   urgencias: {
-    image: 'urgencias.jpeg',
+    image: 'urgencias.webp',
     preImage: (
       <p>
         Una urgencia dental se refiere a cualquier problema dental que requiere atención inmediata. Esto puede incluir
@@ -89,7 +89,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   odontopediatria: {
-    image: 'odontopediatria.jpeg',
+    image: 'odontopediatria.webp',
     text: (
       <ul>
         <li>Mi primera consulta - Adaptación al niño</li>
@@ -107,7 +107,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   odontogeriatria: {
-    image: 'odontogeriatria.jpeg',
+    image: 'odontogeriatria.webp',
     text: (
       <ul>
         <li>Tapaduras simples (obturaciones)</li>
@@ -124,7 +124,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   protesis: {
-    image: 'protesis.jpeg',
+    image: 'protesis.webp',
     text: (
       <ul>
         <li>Prótesis Fija Unitaria (Corona)</li>
@@ -135,7 +135,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   ortodoncia: {
-    image: 'ortodoncia.jpeg',
+    image: 'ortodoncia.webp',
     text: (
       <ul>
         <li>Corrección de la posición de huesos y dientes que se encuentren desalineados o mal posicionados.</li>
@@ -148,7 +148,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   implantes: {
-    image: 'implantes.jpeg',
+    image: 'implantes.webp',
     text: (
       <ul>
         <li>Restauración de diente o varios dientes de forma fija</li>
@@ -160,7 +160,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   general: {
-    image: 'general.jpeg',
+    image: 'general.webp',
     text: (
       <ul>
         <li>Primera consulta: Diagnostico global y plan de tratamiento</li>
@@ -173,7 +173,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   estetica: {
-    image: 'estetica.jpeg',
+    image: 'estetica.webp',
     text: (
       <ul>
         <li>Peeling Químico: Limpieza profunda</li>
@@ -188,7 +188,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   endodoncia: {
-    image: 'endodoncia.jpeg',
+    image: 'endodoncia.webp',
     text: (
       <ul>
         <li>Tratamiento que intenta conservar el diente después de infección o inflamación.</li>
@@ -198,7 +198,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   exodoncia: {
-    image: 'exodoncia.jpeg',
+    image: 'exodoncia.webp',
     text: (
       <ul>
         <li>Extraer/Sacar Dientes en mal estado o con mal pronóstico</li>
@@ -209,7 +209,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   periodoncia: {
-    image: 'periodoncia.jpeg',
+    image: 'periodoncia.webp',
     text: (
       <ul>
         <li>Tratamiento de encías</li>
@@ -223,7 +223,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   blanqueamiento: {
-    image: 'blanqueamiento.jpeg',
+    image: 'blanqueamiento.webp',
     text: (
       <ul>
         <li>Mejora el tono de los dientes</li>
@@ -234,7 +234,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   carillas: {
-    image: 'carillas.jpeg',
+    image: 'carillas.webp',
     text: (
       <ul>
         <li>Mejora la forma y color de los dientes</li>
@@ -245,7 +245,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   removible: {
-    image: 'removible.jpeg',
+    image: 'removible.webp',
     text: (
       <ul>
         <li>Devolver uno o varios dientes</li>
@@ -256,7 +256,7 @@ export const areasDescription: AreaDescription = {
     ),
   },
   bruxismo: {
-    image: 'bruxismo.jpeg',
+    image: 'bruxismo.webp',
     text: (
       <ul>
         <li>Tratamiento de causas de bruxismo</li>

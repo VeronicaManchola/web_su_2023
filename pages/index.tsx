@@ -7,16 +7,16 @@ import { areasSections, locationText, scheduleText } from '@utils/constants';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-import location from '@assets/images/location.jpeg';
-import locationMobile from '@assets/images/locationMobile.jpeg';
-import schedule from '@assets/images/schedule.jpeg';
-import scheduleMobile from '@assets/images/scheduleMobile.jpeg';
+import location from '@assets/images/location.webp';
+import locationMobile from '@assets/images/locationMobile.webp';
+import schedule from '@assets/images/schedule.webp';
+import scheduleMobile from '@assets/images/scheduleMobile.webp';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
   const {
     default: { src: ogImg },
-  } = require(`@assets/images/og_img.jpg`);
+  } = require(`@assets/images/og_img.webp`);
 
   return (
     <Fragment>
@@ -36,6 +36,9 @@ const Home: NextPage = () => {
           content="SuDent Clinic Servicio de Urgencia Dental sede Maipu. Especialistas en Urgencias dentales. Todas las urgencias dentales las atendemos (dolor, fracturas, infecciones, etc.)"
         />
         <meta property="og:image" content={ogImg} />
+        <meta property="og:image:alt" content="Logo de la clinica SuDent Clinic Servicio de Urgencia Dental" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sudentclinic.cl" />
       </Head>
       <Hero
         image={location.src}

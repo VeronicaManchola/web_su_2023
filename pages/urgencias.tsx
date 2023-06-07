@@ -14,7 +14,7 @@ const Urgencias: NextPage = () => {
   } = require(`@assets/images/${areasDescription.urgencias.image}`);
   const {
     default: { src: ogImg },
-  } = require(`@assets/images/og_img.jpg`);
+  } = require(`@assets/images/og_img.webp`);
 
   return (
     <Fragment>
@@ -34,6 +34,9 @@ const Urgencias: NextPage = () => {
           content="SuDent Clinic Servicio de Urgencia Dental sede Maipu. Especialistas en Urgencias dentales. Todas las urgencias dentales las atendemos (dolor, fracturas, infecciones, etc.)"
         />
         <meta property="og:image" content={ogImg} />
+        <meta property="og:image:alt" content="Logo de la clinica SuDent Clinic Servicio de Urgencia Dental" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sudentclinic.cl" />
       </Head>
       <Container id="urgenciasDetail">
         <DetailCard

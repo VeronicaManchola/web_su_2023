@@ -5,8 +5,8 @@ import Hero from '@modules/Hero';
 import Navigation from '@modules/Navigation';
 import { navSections } from '@utils/constants';
 
-import header from '@assets/images/header.jpeg';
-import headerMobile from '@assets/images/headerMobile.png';
+import header from '@assets/images/header.webp';
+import headerMobile from '@assets/images/headerMobile.webp';
 
 const theme = createTheme({
   palette: {

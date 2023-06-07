@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
-import logo from '@assets/images/logo.jpeg';
+import logo from '@assets/images/logo.webp';
 import Image from 'next/image';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
